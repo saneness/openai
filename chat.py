@@ -37,17 +37,19 @@ if __name__ == '__main__':
         open(history, "w+").write(json.dumps(messages))
         print(f"{response}")
     else:
-        X1 = 40
-        Y1 =  1
-        X2 =  4
-        Y2 = 10
-        W  = -0.1
         history = f"{args.log}"
         for user in os.listdir(history):
             log = os.path.join(history, user)
             if os.path.isfile(log):
                 size = os.path.getsize(log) / 1024
-                time = (Y2-Y1)*(math.exp(W*size)-math.exp(W*X1))/(math.exp(W*X2)-math.exp(W*X1)) + Y1
+                # exponential formula for storage time
+                # X1 = 40
+                # Y1 =  1
+                # X2 =  4
+                # Y2 = 10
+                # W  = -0.1
+                # time = (Y2-Y1)*(math.exp(W*size)-math.exp(W*X1))/(math.exp(W*X2)-math.exp(W*X1)) + Y1 
+                time = 1
                 mtime = (datetime.datetime.now().timestamp() - os.path.getmtime(log)) / 3600
                 if mtime > time:
                     os.remove(log)
