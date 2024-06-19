@@ -13,7 +13,7 @@ def args():
     parser   = argparse.ArgumentParser(description="Wrapper to generate OpenAI messages.")
     parser.add_argument("-u", "--user", metavar="\b", help="user to get conversation history for")
     parser.add_argument("-l", "--log",  metavar="\b", default="/tmp", help="conversation logs")
-    parser.add_argument("-m", "--model", metavar="\b", default="gpt-4o", help="model to use (default: gpt-4o)")
+    parser.add_argument("-m", "--model", metavar="\b", default="gpt-3.5-turbo", help="model to use (default: gpt-3.5-turbo)")
     parser.add_argument("-p", "--prompt", metavar="\b", help="Prompt to generate response from")
     parser.add_argument("-c", "--clean", action="store_true", help="Run clean checks for all the chats")
     args = parser.parse_args()
