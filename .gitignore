@@ -1,3 +1,5 @@
 .api
 .session
+config.py
 history/
+__pycache__/
